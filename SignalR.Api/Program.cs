@@ -1,4 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using SignalR.DataAccessLayer.Concrete;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SignalRContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 
@@ -23,3 +27,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
