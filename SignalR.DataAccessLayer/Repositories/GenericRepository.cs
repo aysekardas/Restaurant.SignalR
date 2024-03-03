@@ -23,7 +23,7 @@ namespace SignalR.DataAccessLayer.Repositories
            _context.SaveChanges();
         }
 
-        public void Delet(T entity)
+        public void Delete(T entity)
         {
             _context.Remove(entity);
             _context.SaveChanges();
