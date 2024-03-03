@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using SignalR.BusinessLayer.DependencyResolvers;
 using SignalR.DataAccessLayer.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<SignalRContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
+
+builder.Services.AddBusinessServices(builder.Configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
