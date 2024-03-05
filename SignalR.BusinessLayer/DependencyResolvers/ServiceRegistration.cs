@@ -18,13 +18,9 @@ namespace SignalR.BusinessLayer.DependencyResolvers
     {
         public static IServiceCollection AddBusinessServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<SignalRContext>();
-
 
             services.AddScoped<IAboutService, AboutManager>()
                     .AddScoped<IAboutDal, EfAboutDal>();
-
-
 
 
             services.AddDbContext<SignalRContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
