@@ -9,6 +9,7 @@ using SignalR.DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,7 +25,12 @@ namespace SignalR.BusinessLayer.DependencyResolvers
 
             services.AddScoped<IBookingService, BookingManager>()
                     .AddScoped<IBookingDal, EfBookingDal>();
-                    
+
+            services.AddScoped<ICategoryService, CategoryManager>()
+                    .AddScoped<ICategoryDal, EfCategoryDal>();
+
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddDbContext<SignalRContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
