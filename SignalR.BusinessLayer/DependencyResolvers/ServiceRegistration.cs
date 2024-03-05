@@ -22,6 +22,9 @@ namespace SignalR.BusinessLayer.DependencyResolvers
             services.AddScoped<IAboutService, AboutManager>()
                     .AddScoped<IAboutDal, EfAboutDal>();
 
+            services.AddScoped<IBookingService, BookingManager>()
+                    .AddScoped<IBookingDal, EfBookingDal>();
+                    
 
             services.AddDbContext<SignalRContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
