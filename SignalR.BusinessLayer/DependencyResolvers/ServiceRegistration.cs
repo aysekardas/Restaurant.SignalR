@@ -29,6 +29,9 @@ namespace SignalR.BusinessLayer.DependencyResolvers
             services.AddScoped<ICategoryService, CategoryManager>()
                     .AddScoped<ICategoryDal, EfCategoryDal>();
 
+            services.AddScoped<IContactService, ContactManager>()
+                    .AddScoped<IContactDal, EfContactDal>();    
+
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
