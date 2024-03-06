@@ -30,7 +30,10 @@ namespace SignalR.BusinessLayer.DependencyResolvers
                     .AddScoped<ICategoryDal, EfCategoryDal>();
 
             services.AddScoped<IContactService, ContactManager>()
-                    .AddScoped<IContactDal, EfContactDal>();    
+                    .AddScoped<IContactDal, EfContactDal>();
+
+            services.AddScoped<IDiscountService, DiscountManager>()
+                    .AddScoped<IDiscountDal, EfDiscountDal>();
 
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
