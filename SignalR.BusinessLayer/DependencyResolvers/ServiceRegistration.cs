@@ -35,6 +35,8 @@ namespace SignalR.BusinessLayer.DependencyResolvers
             services.AddScoped<IDiscountService, DiscountManager>()
                     .AddScoped<IDiscountDal, EfDiscountDal>();
 
+            services.AddScoped<IFeatureService, FeatureManager>()
+                   .AddScoped<IFeatureDal, EfFeatureDal>();
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
