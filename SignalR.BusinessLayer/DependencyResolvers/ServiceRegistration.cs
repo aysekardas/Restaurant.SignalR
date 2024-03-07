@@ -42,6 +42,9 @@ namespace SignalR.BusinessLayer.DependencyResolvers
                     .AddScoped<IProductDal, EfProductDal>();
 
 
+            services.AddScoped<ITestimonialService, TestimonialManager>()
+                    .AddScoped<ITestimonialDal, EfTestimonialDal>();
+
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddDbContext<SignalRContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
