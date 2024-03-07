@@ -41,6 +41,8 @@ namespace SignalR.BusinessLayer.DependencyResolvers
             services.AddScoped<IProductService, ProductManager>()
                     .AddScoped<IProductDal, EfProductDal>();
 
+            services.AddScoped<ISocialMediaService, SocialMediaManager>()
+                    .AddScoped<ISocialMediaDal, EfSocialMediaDal>();
 
             services.AddScoped<ITestimonialService, TestimonialManager>()
                     .AddScoped<ITestimonialDal, EfTestimonialDal>();
